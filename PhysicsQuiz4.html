@@ -8,36 +8,39 @@
 
 function scoreQuestions(number, answer) {
 
-if (number == 1) {
-	if (answer == "a")
-	window.alert("Correct Answer");
-	else
-	window.alert("Incorrect Answer");
-}
-else if (number == 2) {
-	if (answer == "c")
-	window.alert("Correct Answer");
-	else
-	window.alert("Incorrect Answer");
-}
-else if (number == 3) {
-	if (answer == "b")
-	window.alert("Correct Answer");
-	else
-	window.alert("Incorrect Answer");
-}
-else if (number == 4) {
-	if (answer == "c")
-	window.alert("Correct Answer");
-	else
-	window.alert("Incorrect Answer");
-}
-else if (number == 5) {
-	if (answer == "d")
-	window.alert("Correct Answer");
-	else
-	window.alert("Incorrect Answer");
+	switch (number) {
+		case 1:
+			if (answer == 'a')
+			window.alert("Correct Answer");
+			else
+			window.alert("Incorrect Answer");
+			break;
+		case 2:
+			if (answer == 'c')
+			window.alert("Correct Answer");
+			else
+			window.alert("Incorrect Answer");
+			break;
+		case 3:
+			if (answer == 'b')
+			window.alert("Correct Answer");
+			else
+			window.alert("Incorrect Answer");
+			break;
+		case 4:
+			if (answer == 'c')
+			window.alert("Correct Answer");
+			else
+			window.alert("Incorrect Answer");
+			break;
+		case 5:
+			if (answer == 'd')
+			window.alert("Correct Answer");
+			else
+			window.alert("Incorrect Answer");
+			break;
 	}
+
 }
 
 /* ]]> */
