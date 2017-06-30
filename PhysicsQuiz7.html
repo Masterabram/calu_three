@@ -7,6 +7,7 @@
 /* <![CDATA[ */
 
 var answers = new Array(5);
+
 var correctAnswers = new Array(5);
 correctAnswers[0] = "a";
 correctAnswers[1] = "c";
@@ -20,13 +21,11 @@ answers[question-1] = answer;
 
 function scoreQuiz() {
 	var totalCorrect = 0;
-	var count = 0;
-		do {
-			if (answers[count] == correctAnswers[count])
-			++totalCorrect;
-			++count;
-			} 
-		while (count < 5);
+		for (var count = 0;
+		count < correctAnswers.length; ++count) {
+		if (answers[count] == correctAnswers[count])
+		++totalCorrect;
+		}
 	
 	document.quiz.score.value = "You scored "
 	+ totalCorrect
