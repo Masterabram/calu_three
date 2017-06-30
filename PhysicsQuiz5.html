@@ -34,11 +34,36 @@ function scoreQuiz() {
 
 /* ]]> */
 </script>
+<style type="text/css">
+	
+body {
+	color: white; 
+	border-style: none; 
+	border-color: inherit; 
+	border-width: medium; 
+	background-color: Transparent;
+	margin: 30px;
+	background-image: url(bg.jpg);
+}
+.head{
+	height: 200px;
+}
 
+.headtext{
+	float: right;
+}
+
+
+</style>
 </head>
-<body style="background-color: rgb(58, 26, 46);">
+<body>
+
+<div class="head" >
+	<div class="headtext" ><h1>Gosselin Laboratories</h1></div>
+</div>
 
 	<form action="" name="quiz">
+	<h2>Physics Quiz</h2>
 
 		<p><strong>1. How many natural elements are there?</strong></p><p>
 			<input type="radio" name="question1" value="a" onclick="recordAnswer(1, 'a')" />92<br />
