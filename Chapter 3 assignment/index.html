@@ -8,35 +8,76 @@
 <script type="text/javascript">
 /* <![CDATA[ */
 
+function underline(s) {
+    var arr = s.split('');
+    s = arr.join('\u0332');
+    if (s) s = s + '\u0332';
+    return s;
+}
 // start of my function
 function calculatetuition(){
 	var name = document.calu.name.value;
 	var semester = document.calu.semester.value;
 	var residence = document.calu.residence.value;
 	var credit = document.calu.credits.value;
-	var subtotal = semester + residence;
-	var total = subtotal * credit
+	var creditcost = document.calu.creditcost.value;
+	var tuitioncost = document.calu.tuitioncost.value;
 
-	var display1 = 'Hello ' + name ;
-	var display2 = 'Your semester fee is: ' + semester ;
-	var display3 = ' and your residence fee is: ' + residence ;
-	var display4 = ' That total of the Tuition fee is : ' + total ;
-	var display = display1 + display2 + display3 + display4 ;
+	var creditcostarray  = new Array(3);
+	var creditCostArray  = new Array(3);
+	creditCostArray [0] = 302.00;
+	creditCostArray [1] = 452.00;
+	creditCostArray [2] = 588.00;
 
-	alert(display);
+	var tuitioncostarray  = new Array(3);
+	var tuitionCostArray  = new Array(3);
+	tuitionCostArray [0] = 3619.00;
+	tuitionCostArray [1] = 5429.00;
+	tuitionCostArray [2] = 7057.00;
+
+// if stetement
+	if (residence){
+
+		// start of if statement 
+		if (residence == 'instate') {
+			var disp1 = 'Name: ' + name;
+			var disp2 = 'Residence In-state';		
+			var disp3 = 'Number of credit taken: ' + credit ;
+			var disp4 = underline('DATA') + '\n' + "1. Tuition Type: Full-Time # Credit Hours:12-18 Cost: $3619.00";
+			var disp5 = "2. Tuition Type: Full-Time with an overload # Credit Hours: Over 18 Cost:$3619.00 + $302.00 per credit over 18";
+			var disp6 = "3. Tuition Type: Part-Time # Credit Hours:Less than 12 Cost: 302.00 per credit";
+			var disp7 = underline("Total tuition cost is: " + (semester + 50) );
+
+			alert(disp1 + '\n' + disp2 + '\n' + disp3 + '\n' + disp4 + '\n' + disp5 + '\n' + disp6  + '\n' + disp7);
+		}
+		else if (residence == 'outstate'){
+			var disp1 = 'Name: ' + name;
+			var disp2 = 'Residence In-state';		
+			var disp3 = 'Number of credit taken: ' + credit ;
+			var disp4 = underline('DATA') + '\n' + "1. Tuition Type: Full-Time # Credit Hours:12-18 Cost:$5429.00";
+			var disp5 = "2. Tuition Type: Full-Time with an overload # Credit Hours: Over 18 Cost:$5429.00 + $452.00 per credit over 18";
+			var disp6 = "3. Tuition Type: Part-Time # Credit Hours:Less than 12 Cost:$452.00 per credit";
+			var disp7 = underline("Total tuition cost is: " +  (semester + 70) );
+
+			alert(disp1 + '\n' + disp2 + '\n' + disp3 + '\n' + disp4 + '\n' + disp5 + '\n' + disp6  + '\n' + disp7);
+		}	
+		else if(residence == 'international') {
+			var disp1 = 'Name: ' + name;
+			var disp2 = 'Residence: International';		
+			var disp3 = 'Number of credit taken: ' + credit ;
+			var disp4 = underline('DATA') + '\n' + "1. Tuition Type: Full-Time # Credit Hours:12-18 Cost: $7057.00";
+			var disp5 = "2. Tuition Type: Full-Time with an overload # Credit Hours: Over 18 Cost:$7057.00 + $588.00 per credit over 18";
+			var disp6 = "3. Tuition Type: Part-Time # Credit Hours:Less than 12 Cost:$588.00 per credit";
+			var disp7 = underline("Total tuition cost is: " + (semester + 90) );
+
+			alert(disp1 + '\n' + disp2 + '\n' + disp3 + '\n' + disp4 + '\n' + disp5 + '\n' + disp6  + '\n' + disp7);
+		}
+		// end of if statement 
+	}
+
 }
 
-var creditcostarray  = new Array(3);
-var creditCostArray  = new Array(3);
-creditCostArray [0] = 302.00;
-creditCostArray [1] = 452.00;
-creditCostArray [2] = 588.00;
 
-var tuitioncostarray  = new Array(3);
-var tuitionCostArray  = new Array(3);
-tuitionCostArray [0] = 3619.00;
-tuitionCostArray [1] = 5429.00;
-tuitionCostArray [2] = 7057.00;
 
 
 // end of my function
@@ -73,13 +114,13 @@ tuitionCostArray [2] = 7057.00;
 		<table style="width: 400px;">
 			<tr>
 				<td>
-					<label> Name </label> <br />
+					<label> 1. Name </label> <br />
 					<input type="text" id="name" name="name">
 				</td>
 			</tr>		
 			<tr>
 				<td>
-					<label> Choose your semester </label> <br />
+					<label> 2. Choose your semester </label> <br />
 					<input type="radio" id="Semster" name="semester" value="100"  > Semster 1 <br />
 					<input type="radio" id="Semster" name="semester" value="200"  > Semster 2 <br />
 					<input type="radio" id="Semster" name="semester" value="300"  > Semster 3 <br />
@@ -87,15 +128,31 @@ tuitionCostArray [2] = 7057.00;
 			</tr>
 			<tr>
 				<td>
-					<label> choose your residency status </label> <br />
-					<input type="radio" name="residence" value="50"  > in-state <br />
-					<input type="radio" name="residence" value="70"  > Out-of-state<br />
-					<input type="radio" name="residence" value="90"  > International <br />
+					<label> 3.  Choose your residency status </label> <br />
+					<input type="radio" name="residence" value="instate"  > in-state <br />
+					<input type="radio" name="residence" value="outstate"  > Out-of-state<br />
+					<input type="radio" name="residence" value="international"  > International <br />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<label> Number of credits </label> <br />
+					<label> 4. Choose your Credit cost </label> <br />
+					<input type="radio" name="creditcost" value="302"  > 302.00 <br />
+					<input type="radio" name="creditcost" value="452"  > 452.00 <br />
+					<input type="radio" name="creditcost" value="588"  > 588.00 <br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label> 5. Tuition cost ?</label> <br />
+					<input type="radio" name="tuitioncost" value="3619"  > 3619.00 <br />
+					<input type="radio" name="tuitioncost" value="5429"  > 5429.00 <br />
+					<input type="radio" name="tuitioncost" value="7057" > 7057.00 <br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label> 6. Number of credits </label> <br />
 					<input type="number" id="credits" name="credits">
 				</td>
 			</tr>				
@@ -109,7 +166,6 @@ tuitionCostArray [2] = 7057.00;
 	</form>
 
 <!-- end of the form -->
-
 	</div>
   </div>	
   </div>

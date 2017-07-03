@@ -7,7 +7,7 @@
 /* <![CDATA[ */
 
 function scoreQuestions(number, answer) {
-
+// start switchcase statements
 	switch (number) {
 		case 1:
 			if (answer == 'a')
@@ -40,7 +40,7 @@ function scoreQuestions(number, answer) {
 			window.alert("Incorrect Answer");
 			break;
 	}
-
+// end switchcase statements
 }
 
 /* ]]> */
@@ -77,8 +77,7 @@ body {
 	<h2>Physics Quiz</h2>
 
 		<p><strong>1. How many natural elements are there?</strong></p><p>
-			<input type="radio" name="question1" value="a" onclick="scoreQuestions(1, 'a')" />92<br />
-			<!-- correct answer -->
+			<input type="radio" name="question1" value="a" onclick="scoreQuestions(1, 'a')" />92<br /><!-- correct answer -->
 			<input type="radio" name="question1" value="b" onclick="scoreQuestions(1, 'b')" />113<br />
 			<input type="radio" name="question1" value="c" onclick="scoreQuestions(1, 'c')" />103<br />
 			<input type="radio" name="question1" value="d" onclick="scoreQuestions(1, 'd')" />88</p>
